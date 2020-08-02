@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('ts');
+    return view('welcome');
 });
 
-Route::get('/tickets','TicketsController@index');
+Route::get('/tickets','TicketController@index')->name('tickets.index');
+
