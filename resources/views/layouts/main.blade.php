@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="en">
    @include('layouts.partials._head');
   <body>
