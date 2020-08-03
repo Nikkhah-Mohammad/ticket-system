@@ -48,7 +48,7 @@ class TicketController extends Controller
      */
     public function show(Ticket $ticket)
     {
-        //
+        return view('tickets.show',compact('ticket'));
     }
 
     /**
@@ -71,7 +71,11 @@ class TicketController extends Controller
      */
     public function update(Request $request, Ticket $ticket)
     {
-        //
+        $ticket->summary =request('summary');
+        $ticket->description =request('description');
+        $ticket->status =request('status');
+        $ticket->save();
+        return redirect()->route('tickets.index');
     }
 
     /**

@@ -28,26 +28,26 @@
         <div class="form-group">
           
           <label for="summary">summary</label>
-          <input type="text" id="summary" name="summary" class="form-control">
+          <input type="text" id="summary" name="summary" class="form-control" value="{{ $ticket->summary }}">
         </div>
 
 
         <div class="form-group">
           
           <label for="description">Description</label>
-          <input type="text" id="description" name="description" class="form-control">
+          <input type="text" id="description" name="description" class="form-control" value="{{ $ticket->description }}">
         </div>
 
 
         <div class="form-group">
           
           <label for="status">Status</label>
-          <input type="text" id="status" name="status" class="form-control">
+          <input type="text" id="status" name="status" class="form-control" value="{{ $ticket->status }}">
         </div>
 
 
-        <button class="btn btn-primary" type="submit">Add</button>
-        <a href="{{ route('tickets.index')}}" class="btn btn-danger" >Back</a>
+        <button class="btn btn-primary" type="submit">Update</button>
+        <a href="{{ route('tickets.index')}}" class="btn btn-danger">Back</a>
       </form>
      
     </main>
