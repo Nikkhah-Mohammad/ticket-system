@@ -21,32 +21,33 @@
       </div>
 
      
-      <h2>Section title</h2>
-      <div class="table-responsive">
-          <a class="btn btn-primary" href="/tickets/create" >Add New Ticket</a>
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>summary</th>
-              <th>Description</th>
-              <th>status</th>
-           
-            </tr>
-          </thead>
-          <tbody>
-            @foreach($tickets as $ticket)
-            <tr>
-              <td>{{ $ticket->id }}</td>
-              <td>{{ $ticket->summary }}</td>
-              <td>{{ $ticket->description }}</td>
-              <td>{{ $ticket->status }}</td>
-              
-            </tr>
-            @endforeach
-            
-          </tbody>
-        </table>
-      </div>
+      <form action="" method="post">
+        {{ csrf_field()}}
+
+
+        <div class="form-group">
+          
+          <label for="summary">summary</label>
+          <input type="text" id="summary" name="summary" class="form-control">
+        </div>
+
+
+        <div class="form-group">
+          
+          <label for="description">Description</label>
+          <input type="text" id="description" name="description" class="form-control">
+        </div>
+
+
+        <div class="form-group">
+          
+          <label for="status">Status</label>
+          <input type="text" id="status" name="status" class="form-control">
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Add</button>
+      </form>
+     
     </main>
 @endsection

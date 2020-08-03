@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/tickets','TicketController@index')->name('tickets.index');
+Route::get('/tickets/create','TicketController@create')->name('tickets.create');
 
