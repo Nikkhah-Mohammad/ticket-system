@@ -4,7 +4,7 @@
 
   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Updata Ticket {{  $ticket->id  }}</h1>
+        <h1 class="h2">Delete Ticket {{  $ticket->id  }}</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
 
 
@@ -28,26 +28,26 @@
         <div class="form-group">
           
           <label for="summary">summary</label>
-          <input type="text" id="summary" name="summary" class="form-control" value="{{ $ticket->summary }}">
+          <input type="text" id="summary" name="summary" class="form-control" value="{{ $ticket->summary }}" disabled>
         </div>
 
 
         <div class="form-group">
           
           <label for="description">Description</label>
-          <input type="text" id="description" name="description" class="form-control" value="{{ $ticket->description }}">
+          <input type="text" id="description" name="description" class="form-control" value="{{ $ticket->description }}" disabled>
         </div>
 
 
         <div class="form-group">
           
           <label for="status">Status</label>
-          <input type="text" id="status" name="status" class="form-control" value="{{ $ticket->status }}">
+          <input type="text" id="status" name="status" class="form-control" value="{{ $ticket->status }}" disabled>
         </div>
 
 
-        <button class="btn btn-primary" type="submit">Update</button>
-        <a href="{{ route('tickets.index')}}" class="btn btn-danger">Back</a>
+        <button class="btn btn-danger" type="submit">Delete</button>
+        <a href="{{ route('tickets.index')}}" class="btn btn-secondary">Back</a>
       </form>
      
     </main>

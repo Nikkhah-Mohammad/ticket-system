@@ -28,6 +28,11 @@ class TicketController extends Controller
     {
         return view('tickets.create');
     }
+    public function delete(Ticket $ticket)
+    {
+        return view('tickets.delete',compact('ticket'));
+
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -86,6 +91,7 @@ class TicketController extends Controller
      */
     public function destroy(Ticket $ticket)
     {
-        //
+        $ticket->delete();
+        return redirect()->route('tickets.index');
     }
 }
