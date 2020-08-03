@@ -8,6 +8,9 @@
   <div class="row">
    @include('layouts.partials._sidebare')
    
+  @include('layouts.partials._alerts')
+
+
    @yield('content')
   </div>
 </div>

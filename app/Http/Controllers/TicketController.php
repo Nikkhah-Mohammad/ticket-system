@@ -80,7 +80,7 @@ class TicketController extends Controller
         $ticket->description =request('description');
         $ticket->status =request('status');
         $ticket->save();
-        return redirect()->route('tickets.index');
+        return redirect()->route('tickets.index')->withSuccess('Ticket has been updated');
     }
 
     /**
@@ -92,6 +92,6 @@ class TicketController extends Controller
     public function destroy(Ticket $ticket)
     {
         $ticket->delete();
-        return redirect()->route('tickets.index');
+        return redirect()->route('tickets.index')->withSuccess('Ticket has been deleted');
     }
 }
