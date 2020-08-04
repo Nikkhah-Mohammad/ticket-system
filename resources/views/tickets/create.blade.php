@@ -40,11 +40,14 @@
 
 
         <div class="form-group">
-          
-          <label for="status">Status</label>
-          <input type="text" id="status" name="status" class="form-control">
-        </div>
-
+        <label for="status">Status</label>
+          <select class="form-control" id="status"  name="status" >
+          <option value="Open">Open</option>
+         <option value="In Progress">In Progress</option>
+         <option value="Closed">Closed</option>
+        </select>
+      </div>
+     
 
         <button class="btn btn-primary" type="submit">Add</button>
         <a href="{{ route('tickets.index')}}" class="btn btn-danger" >Back</a>

@@ -19,10 +19,12 @@ Route::get('/', function () {
 
 Route::get('/tickets','TicketController@index')->name('tickets.index');
 
+Route::get('/tickets/create','TicketController@create')->name('tickets.create');
+
+Route::post('/tickets/create','TicketController@store')->name('tickets.store');
 
 Route::post('/tickets/{ticket}','TicketController@update')->name('tickets.update');
 
-Route::get('/tickets/create','TicketController@create')->name('tickets.create');
 
 Route::get('/tickets/delete/{ticket}','TicketController@delete')->name('tickets.delete');
 

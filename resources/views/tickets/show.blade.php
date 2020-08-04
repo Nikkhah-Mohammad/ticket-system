@@ -39,11 +39,18 @@
         </div>
 
 
-        <div class="form-group">
-          
-          <label for="status">Status</label>
-          <input type="text" id="status" name="status" class="form-control" value="{{ $ticket->status }}">
-        </div>
+       
+
+
+      <div class="form-group">
+        <label for="status">Status</label>
+          <select class="form-control" id="status"  name="status" value="{{ $ticket->status }}" >
+          <option value="Open">Open</option>
+         <option value="In Progress">In Progress</option>
+         <option value="Closed">Closed</option>
+        </select>
+      </div>
+     
 
 
         <button class="btn btn-primary" type="submit">Update</button>
