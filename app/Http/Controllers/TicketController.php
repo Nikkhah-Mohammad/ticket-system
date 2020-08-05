@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Ticket;
 use Illuminate\Http\Request;
+use App\Http\Requests\TicketUpdateRequest;
 
 class TicketController extends Controller
 {
@@ -40,7 +41,7 @@ class TicketController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TicketUpdateRequest $request)
     {
         Ticket::create([
            'summary'=> request('summary'),
@@ -80,18 +81,8 @@ class TicketController extends Controller
      * @param  \App\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ticket $ticket)
+    public function update(TicketUpdateRequest $request, Ticket $ticket)
     {
-
-       
-       $request->validate([
-
-          'summary'=>'required',
-          'description'=>'required'
-       ]);
-
-
-
         $ticket->summary =request('summary');
         $ticket->description =request('description');
         $ticket->status =request('status');

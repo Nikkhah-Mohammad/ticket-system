@@ -28,14 +28,30 @@
         <div class="form-group">
           
           <label for="summary">summary</label>
-          <input type="text" id="summary" name="summary" class="form-control">
+         <input type="text" id="summary" name="summary" class="form-control {{ $errors->has('summary') ? 'is-invalid' : '' }}" value="">
+             @if($errors->has('summary'))
+
+          <span class="help-block">
+               <strong> {{$errors->first('summary') }}</strong>
+          </span>
+          @endif
+
         </div>
 
 
         <div class="form-group">
           
           <label for="description">Description</label>
-          <input type="text" id="description" name="description" class="form-control">
+          <input type="text" id="description" name="description" class="form-control  {{ $errors->has('description') ? 'is-invalid' : '' }}">
+
+           @if($errors->has('description'))
+
+          <span class="help-block">
+               <strong> {{$errors->first('description') }}</strong>
+          </span>
+          @endif
+
+
         </div>
 
 
