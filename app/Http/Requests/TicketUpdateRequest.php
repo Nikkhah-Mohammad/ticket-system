@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\OpenTicketDiscriptionRule;
 
 class TicketUpdateRequest extends FormRequest
 {
@@ -28,7 +29,7 @@ class TicketUpdateRequest extends FormRequest
               
 
               'summary'=>'required',
-              'description'=>'required'
+              'description'=>[new OpenTicketDiscriptionRule()]
              
 
         ];
