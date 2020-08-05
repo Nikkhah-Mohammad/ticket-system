@@ -28,14 +28,29 @@
         <div class="form-group">
           
           <label for="summary">summary</label>
-          <input type="text" id="summary" name="summary" class="form-control" value="{{ $ticket->summary }}">
+          <input type="text" id="summary" name="summary" class="form-control {{ $errors->has('summary') ? 'is-invalid' : '' }}" value="{{ old('summary' ,$ticket->summary) }}">
+
+
+          @if($errors->has('summary'))
+
+          <span class="help-block">
+               <strong> {{$errors->first('summary') }}</strong>
+          </span>
+          @endif
         </div>
 
 
         <div class="form-group">
           
           <label for="description">Description</label>
-          <input type="text" id="description" name="description" class="form-control" value="{{ $ticket->description }}">
+          <input type="text" id="description" name="description" class="form-control  {{ $errors->has('description') ? 'is-invalid' : '' }}" value="{{ old('description' ,$ticket->description) }}">
+
+           @if($errors->has('description'))
+
+          <span class="help-block">
+               <strong> {{$errors->first('description') }}</strong>
+          </span>
+          @endif
         </div>
 
 
@@ -45,9 +60,13 @@
       <div class="form-group">
         <label for="status">Status</label>
           <select class="form-control" id="status"  name="status" value="{{ $ticket->status }}" >
-          <option value="Open">Open</option>
-         <option value="In Progress">In Progress</option>
-         <option value="Closed">Closed</option>
+
+
+          <option value="Open" {{ $ticket->status =="Open" ? "selected" :"" }} >Open</option>
+
+
+         <option value="In Progress" {{ $ticket->status =="In Progress" ? "selected" :"" }} >In Progress</option>
+         <option value="Closed"  {{ $ticket->status =="Closed" ? "selected" :"" }}>Closed</option>
         </select>
       </div>
      

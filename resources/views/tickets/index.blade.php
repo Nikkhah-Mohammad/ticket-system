@@ -21,7 +21,6 @@
       </div>
 
      
-      <h2>Section title</h2>
       <div class="table-responsive">
           <a class="btn btn-primary" href="/tickets/create" >Add New Ticket</a>
         <table class="table table-striped table-sm">

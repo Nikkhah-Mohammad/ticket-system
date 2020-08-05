@@ -82,6 +82,16 @@ class TicketController extends Controller
      */
     public function update(Request $request, Ticket $ticket)
     {
+
+       
+       $request->validate([
+
+          'summary'=>'required',
+          'description'=>'required'
+       ]);
+
+
+
         $ticket->summary =request('summary');
         $ticket->description =request('description');
         $ticket->status =request('status');
