@@ -53,25 +53,8 @@
           @endif
         </div>
 
-
-       
-
-
-      <div class="form-group">
-        <label for="status">Status</label>
-          <select class="form-control" id="status"  name="status" value="{{ $ticket->status }}" >
-
-
-          <option value="Open" {{ $ticket->status =="Open" ? "selected" :"" }} >Open</option>
-
-
-         <option value="In Progress" {{ $ticket->status =="In Progress" ? "selected" :"" }} >In Progress</option>
-         <option value="Closed"  {{ $ticket->status =="Closed" ? "selected" :"" }}>Closed</option>
-        </select>
-      </div>
-     
-
-
+        @include('layouts.partials._statuses')
+  
         <button class="btn btn-primary" type="submit">Update</button>
         <a href="{{ route('tickets.index')}}" class="btn btn-danger">Back</a>
       </form>

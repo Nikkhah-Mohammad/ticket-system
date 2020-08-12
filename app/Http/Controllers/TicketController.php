@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Status;
 use App\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Requests\TicketUpdateRequest;
+
 
 class TicketController extends Controller
 {
@@ -59,8 +61,10 @@ class TicketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Ticket $ticket)
+
     {
-        return view('tickets.show',compact('ticket'));
+        $statuses =Status::get();
+        return view('tickets.show',compact(['ticket','statuses']));
     }
 
     /**
