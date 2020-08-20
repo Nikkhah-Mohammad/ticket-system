@@ -18,8 +18,12 @@ class TicketController extends Controller
     public function index()
 
     {
-        $tickets =Ticket::latest()->get();
+        $tickets =Ticket::latest()->paginate(10);
         return view('tickets.index',compact('tickets'));
+    }
+
+    public function GetAPI(){
+        return $tickets =Ticket::latest()->paginate(200);
     }
 
     /**
@@ -52,6 +56,28 @@ class TicketController extends Controller
         ]);
         return redirect()->route(
             'tickets.index');
+    }
+
+
+    public function storeAPI(request $request){
+
+        $request->wantsJson();
+
+        $request->validate([
+           'summary' =>'required',
+          'description'=>'required',
+          'status'=>'required'
+ 
+
+        ]); 
+
+       $pr =  Ticket::create([
+           'summary'=> request('summary'),
+           'description' =>request('description'),
+           'status'=>request('status'),
+        ]);
+        dd($pr);
+        return $pr;
     }
 
     /**

@@ -34,3 +34,6 @@ Route::get('/tickets/delete/{ticket}','TicketController@delete')->name('tickets.
 Route::post('/tickets/delete/{ticket}','TicketController@destroy')->name('tickets.destroy');
 
 Route::get('/tickets/{ticket}','TicketController@show')->name('tickets.show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

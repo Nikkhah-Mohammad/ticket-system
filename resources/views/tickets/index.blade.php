@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('content')
 
@@ -51,6 +51,7 @@
             
           </tbody>
         </table>
+        {{ $tickets->links()}}
       </div>
     </main>
 @endsection
